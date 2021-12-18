@@ -1,0 +1,86 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$dark: rgb(14, 14, 14);
+$light: rgb(248, 248, 248);
+$primary: rgb(0, 55, 173);
+
+$primary_dark: rgb(0, 30, 95);
+
+$primary_light: rgb(0, 81, 255);
+$plhover: rgb(68, 127, 255);
+
+$bg-box: rgba(231, 231, 231, 0.863);
+
+$text-hero: rgb(207, 207, 207);
+
+ul {
+    list-style: none;
+}
+li {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+}
+
+.btn-menu {
+    position: relative;
+    font-size: 15px !important;
+    color: $light !important;
+    margin-left: 10px;
+    border-radius: 0 !important;
+    background-color: $plhover !important;
+    z-index: 1;
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: $primary_light;
+        width: 100%;
+        height: 100%;
+        border-radius: 0 !important;
+        transition: all ease .3s;
+        z-index: -1;
+    }
+
+    &:hover::before {
+        transition: all ease .3s;
+        width: 0px;
+    }
+}
+
+.btn-hero {
+    position: relative;
+    font-size: 15px !important;
+    color: rgb(0, 102, 143) !important;
+    border-radius: 0 !important;
+    background-color: $plhover !important;
+    box-shadow: 3px 4px 16px rgba(0, 0, 0, 0.425);
+    z-index: 1;
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: $light;
+        width: 100%;
+        height: 100%;
+        border-radius: none;
+        transition: all ease .3s;
+        z-index: -1;
+    }
+    &:hover {
+        color: $light !important;
+    }
+    &:hover::before {
+        transition: all ease .3s;
+        width: 0px;
+    }
+}

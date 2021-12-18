@@ -1,0 +1,73 @@
+.__navbar {
+    width: 100%;
+    height: 90px;
+    background-color: $light;
+    display: flex;
+    align-items: center;
+    .__brand {
+        font-weight: bold;
+        margin: 0;
+        font-size: 22px;
+        color: $primary;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    .__menu {
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+        ul {
+            display: flex;
+            align-items: center;
+            position: relative;
+            height: 100%;
+           
+            li{
+                margin-left: 15px;
+                position: relative;
+                width: auto;
+                height: 100%;
+                margin-bottom: 0;
+                transition: all ease .3s;
+
+                .active::before{
+                    width: 100% !important;
+                }
+              
+                
+                a {
+                    color: $primary;
+                    font-size: 16px;
+                    padding: 10px 8px;
+
+
+                    &:hover {
+                        text-decoration: none;
+                        transition: all ease .3s;
+                    }
+                    &:nth-child(5)::before{
+                        position: relative;
+                    }
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        bottom: -170%;
+                        background-color: $plhover;
+                        width: 0px;
+                        height: 5px;
+                        transition: all ease .3s;
+                    }
+                    &:hover::before{
+                        transition: all ease .3s;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
