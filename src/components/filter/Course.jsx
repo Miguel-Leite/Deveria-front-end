@@ -25,6 +25,11 @@ export const Course = [
     module: 1,
   },
   {
+    id: 7,
+    name: "PHP Avançado",
+    module: 1,
+  },
+  {
     id: 6,
     name: "Python",
     module: 2,
