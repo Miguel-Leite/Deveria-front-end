@@ -15,7 +15,8 @@ $primary_dark: rgb(0, 30, 95);
 $primary_light: rgb(0, 81, 255);
 $plhover: rgb(68, 127, 255);
 
-$bg-box: rgba(231, 231, 231, 0.863);
+$bg-box: rgba(231, 231, 231, 0.301);
+$bg-card: rgb(26, 26, 26);
 
 $text-hero: rgb(207, 207, 207);
 
@@ -61,15 +62,17 @@ a {
     font-size: 15px !important;
     color: rgb(0, 102, 143) !important;
     border-radius: 0 !important;
-    background-color: $plhover !important;
+    background-color: rgb(253, 184, 56) !important;
     box-shadow: 3px 4px 16px rgba(0, 0, 0, 0.425);
+    padding-left: 30px !important;
+    padding-right: 30px !important;
     z-index: 1;
     &::before {
         content: '';
         position: absolute;
         left: 0;
         top: 0;
-        background-color: $light;
+        background-color: rgb(255, 166, 0);
         width: 100%;
         height: 100%;
         border-radius: none;

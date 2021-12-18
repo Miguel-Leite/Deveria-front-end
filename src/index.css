@@ -54,9 +54,11 @@ a {
   font-size: 15px !important;
   color: #00668f !important;
   border-radius: 0 !important;
-  background-color: #447fff !important;
+  background-color: #fdb838 !important;
   -webkit-box-shadow: 3px 4px 16px rgba(0, 0, 0, 0.425);
           box-shadow: 3px 4px 16px rgba(0, 0, 0, 0.425);
+  padding-left: 30px !important;
+  padding-right: 30px !important;
   z-index: 1;
 }
 
@@ -65,7 +67,7 @@ a {
   position: absolute;
   left: 0;
   top: 0;
-  background-color: #f8f8f8;
+  background-color: #ffa600;
   width: 100%;
   height: 100%;
   border-radius: none;
@@ -86,7 +88,7 @@ a {
 
 .__navbar {
   width: 100%;
-  height: 90px;
+  height: 80px;
   background-color: #f8f8f8;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -166,7 +168,7 @@ a {
   content: '';
   position: absolute;
   left: 0;
-  bottom: -170%;
+  bottom: -150%;
   background-color: #447fff;
   width: 0px;
   height: 5px;
@@ -183,7 +185,8 @@ a {
 .__header {
   width: 100%;
   height: 100vh;
-  background-color: #0037ad;
+  background: -webkit-gradient(linear, left top, left bottom, from(#0037ad), to(#001e5f));
+  background: linear-gradient(#0037ad, #001e5f);
   color: #f8f8f8;
 }
 
@@ -263,10 +266,22 @@ header.headerAge p {
   overflow-x: scroll;
 }
 
+.filter .filter-controls::-webkit-scrollbar {
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #447fff;
+}
+
+.filter .filter-controls::-webkit-scrollbar-thumb {
+  background-color: #0051ff;
+  border-radius: 50px;
+  border: 2px solid white;
+}
+
 .filter .filter-controls .control {
   margin: 0px 5px;
   color: #447fff !important;
   background-color: #f8f8f8;
+  border-bottom: 2px solid transparent;
 }
 
 .filter .filter-controls .control:hover {
@@ -297,7 +312,7 @@ header.headerAge p {
   position: absolute;
   left: 0;
   bottom: 0;
-  background-color: rgba(231, 231, 231, 0.863);
+  background-color: rgba(231, 231, 231, 0.301);
   border-radius: 50%;
   width: 8px;
   height: 6px;
@@ -313,19 +328,96 @@ header.headerAge p {
 .filter .filter-content .box {
   position: relative;
   width: 100%;
-  height: auto;
-  padding: 20px 10px;
-  background-color: rgba(231, 231, 231, 0.863);
+  height: 100vh;
+  padding: 25px 10px;
+  background-color: rgba(231, 231, 231, 0.301);
   border-radius: 10px;
+  border: 1px dashed #0051ff;
+  overflow-y: scroll;
+}
+
+.filter .filter-content .box::-webkit-scrollbar {
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #447fff;
+}
+
+.filter .filter-content .box::-webkit-scrollbar-thumb {
+  background-color: #0051ff;
+  border-radius: 50px;
+  border: 2px solid white;
 }
 
 .filter .filter-content .box .box-item {
-  width: 200px;
+  position: relative;
+  width: 100%;
   height: auto;
-  padding: 10px 8px;
   border-radius: 4px;
-  background-color: #f8f8f8;
-  -webkit-box-shadow: 3px 6px 8px rgba(0, 0, 0, 0.192);
-          box-shadow: 3px 6px 8px rgba(0, 0, 0, 0.192);
+  background-color: #1a1a1a;
+  -webkit-box-shadow: 3px 6px 16px rgba(0, 0, 0, 0.192);
+          box-shadow: 3px 6px 16px rgba(0, 0, 0, 0.192);
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.filter .filter-content .box .box-item video {
+  border-radius: 5px 5px 0px 0px;
+}
+
+.filter .filter-content .box .box-item .video-course {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.filter .filter-content .box .box-item .video-course::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.116)), to(rgba(0, 0, 0, 0.555)));
+  background: linear-gradient(rgba(0, 0, 0, 0.116), rgba(0, 0, 0, 0.555));
+  width: 100%;
+  height: 100%;
+}
+
+.filter .filter-content .box .box-item .content {
+  margin: 10px;
+}
+
+.filter .filter-content .box .box-item .content h5 {
+  color: #f8f8f8;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  font-size: 26px;
+}
+
+.filter .filter-content .box .box-item .content p {
+  text-align: center;
+  color: #cccccc;
+  font-size: 13px;
+}
+
+.filter .filter-content .box .box-item .content .box-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 13px;
+  margin-top: 20px;
+  color: #7e7e7e;
+}
+
+.filter .filter-content .box .box-item .content .btn {
+  background-color: #0051ff;
+  color: #f8f8f8;
+  padding: 5px !important;
+  width: 100%;
+  margin-bottom: 15px;
 }
 /*# sourceMappingURL=index.css.map */

@@ -1,6 +1,6 @@
 .__navbar {
     width: 100%;
-    height: 90px;
+    height: 80px;
     background-color: $light;
     display: flex;
     align-items: center;
@@ -56,7 +56,7 @@
                         content: '';
                         position: absolute;
                         left: 0;
-                        bottom: -170%;
+                        bottom: -150%;
                         background-color: $plhover;
                         width: 0px;
                         height: 5px;
