@@ -52,7 +52,10 @@ export default function Filter(props) {
             <h3> {props.title} </h3>
 
             <h6>
-              Aulas: <span>1/3</span>
+              Aulas:
+              <span>
+                {courseByState.length}/{courseByState.length}
+              </span>
             </h6>
             <div className="box">
               <div className="container">
