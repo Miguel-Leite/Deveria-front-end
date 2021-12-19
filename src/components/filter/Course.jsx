@@ -1,4 +1,7 @@
-export const Course = [
+import api from '../../Api'
+
+
+const Course = [
   {
     id: 1,
     name: "React",
@@ -35,3 +38,16 @@ export const Course = [
     module: 2,
   },
 ];
+
+async function componentCourse() {
+  const response = await api.get('course/')
+  const courses = response.data
+
+  courses.map(course => {
+    Course.push(course)
+  })
+}
+
+
+componentCourse()
+export default Course

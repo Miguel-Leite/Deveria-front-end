@@ -1,38 +1,36 @@
 import { Container } from "reactstrap";
 import video from "../../assets/img/course.mp4";
 import { Link } from "react-router-dom";
-import { Module } from "./Module";
-import { Course } from "./Course";
+import Module from "./Module";
+import Course from "./Course";
 import React, { useState, useEffect } from "react";
+
 
 export default function Filter(props) {
   const [items, setItems] = useState([]);
   const [course, setCourse] = useState([]);
   const [courseByState, setCourseByState] = useState([]);
+  const [getModule,setModule] = useState([])
 
   useEffect(() => {
     setItems(Module);
     setCourse(Course);
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     loadFirstModuleWithCourses();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [course]);
 
   function getCourseByModule(module_id) {
-    // eslint-disable-next-line array-callback-return
     setCourseByState(course.filter((item) => item.module === module_id));
   }
 
   function loadFirstModuleWithCourses() {
     const firstModule = items[0]?.id;
-
     setCourseByState(course.filter((item) => item.module === firstModule));
   }
 
+  
   return (
     <div>
       <div className="filter mb-5">
