@@ -1,40 +1,35 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Container } from "reactstrap";
-import Navbar from "./components/navbar/Navbar";
-import Hero from "./assets/img/hero.svg";
+import React from 'react';
+import Routes from "./routes";
+import { BrowserRouter, Route,Switch } from 'react-router-dom';
 
-import { Link } from "react-router-dom";
+import HomePage from './pages/HomePage';
+import About from './pages/About'
+import Course from './pages/Course';
+import Module from './pages/Module';
+import Login from './pages/Login';
+import Register from './pages/Register';
 
-function App() {
-  return (
-    <div>
-      <header className="__header">
-        <Navbar />
-        <Container>
-          <div className="__hero">
-            <div className="__content">
-              <h2>
-                Bem vindo ao <span>DEVLESSON</span>
-              </h2>
-              <br />
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Nostrum, blanditiis <br /> amet ipsa natus voluptatem commodi
-                enim eveniet tenetur? Voluptate <br /> maxime perspiciatis vero
-                quo deleniti numquam at ipsum beatae. <br /> Quis, similique?
-              </p>
-              <Link to="/" className="btn btn-hero">
-                Registrar-se
-              </Link>
-            </div>
-            <div className="image">
-              <img src={Hero} alt="Hero" />
-            </div>
-          </div>
-        </Container>
-      </header>
-    </div>
-  );
-}
+import Home from './pages/admin/Home';
+import ModuleAdmin from './pages/admin/ModuleAdmin';
+import CourseAdmin from './pages/admin/CourseAdmin'
 
-export default App;
+
+export default function App() {
+   return (
+      <BrowserRouter>
+         <Switch>
+            <Route exact path='/' component={HomePage} /> 
+            <Route path='/sobre' component={About} /> 
+            <Route path='/cursos' component={Course} /> 
+            <Route path='/module' component={Module} /> 
+            <Route path='/login' component={Login} /> 
+            <Route path='/register' component={Register} />
+
+            <Route exact path="/dashboard" component={Home} />
+            <Route path="/dashboard/module" component={ModuleAdmin} />
+            <Route path="/dashboard/course" component={CourseAdmin} />                           
+         </Switch>
+      </BrowserRouter>
+   );
+  
+  }

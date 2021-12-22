@@ -1,19 +1,6 @@
 import api from '../../Api'
 
-const Module = [
-  {
-    id: 1,
-    name: "PHP",
-  },
-  {
-    id: 2,
-    name: "Python",
-  },
-  {
-    id: 3,
-    name: "Javascript",
-  },
-];
+const Module = [];
 
 async function componentModule() {
   const response = await api.get('module/')

@@ -10,7 +10,7 @@ export default function Filter(props) {
   const [items, setItems] = useState([]);
   const [course, setCourse] = useState([]);
   const [courseByState, setCourseByState] = useState([]);
-  const [getModule,setModule] = useState([])
+  const [getModule, setModule] = useState([])
 
   useEffect(() => {
     setItems(Module);
@@ -30,18 +30,18 @@ export default function Filter(props) {
     setCourseByState(course.filter((item) => item.module === firstModule));
   }
 
-  
+
   return (
     <div>
       <div className="filter mb-5">
         <div className="filter-controls">
-          {items.map(({ id, name }) => (
+          {items.map(({ id, module }) => (
             <button
               className="btn control"
               key={id}
               onClick={() => getCourseByModule(id)}
             >
-              {name}
+              {module}
             </button>
           ))}
         </div>
@@ -68,7 +68,7 @@ export default function Filter(props) {
                             </video>
                           </div>
                           <div className="content">
-                            <h5> {item.name} </h5>
+                            <h5> {item.course} </h5>
                             <p>
                               dolor sit amet consectetur adipisicing elit.
                               Doloribus, earum? ipsum, dolor sit amet
@@ -86,7 +86,11 @@ export default function Filter(props) {
                       </div>
                     ))
                   ) : (
-                    <h2>Sem items</h2>
+                      <div className="alert alert-info text-center col-12" role="alert">
+                        <div className="name">
+                          <strong><h2> Sem items </h2></strong>
+                        </div>
+                      </div>
                   )}
                 </div>
               </div>

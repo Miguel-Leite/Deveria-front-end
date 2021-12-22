@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
+  const token = localStorage.getItem('token');
   return (
     <nav className="__navbar">
       <Container>
@@ -26,11 +27,19 @@ export default () => {
                 Coursos
               </NavLink>
             </li>
-            <li>
-              <Link to="/login" className="btn btn-menu">
-                Iniciar sessão
-              </Link>
-            </li>
+            { (!token)?(
+                <li>
+                  <Link to="/login" className="btn btn-menu">
+                    Iniciar sessão
+                  </Link>
+                </li>
+            ): (
+              <li>
+                  <Link to="/dashboard" className="btn btn-menu">
+                    Dashboard
+                  </Link>
+                </li>
+            )}
           </ul>
         </div>
       </Container>

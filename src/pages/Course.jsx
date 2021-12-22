@@ -1,8 +1,14 @@
+import { useEffect } from "react";
+import { useHistory } from "react-router-dom";
+
 import Navbar from "../components/navbar/Navbar";
 import Hero from "../components/hero/Hero";
 import Filter from "../components/filter/Filter";
 
+
+
 export default function Course() {
+
   return (
     <div>
       <Navbar />
