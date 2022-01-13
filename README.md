@@ -1,6 +1,6 @@
 # DEVLESSON 
 
-E u projecto Feito para teste dada Pela Empresa Verzel, com Objectivos de teste Os Meus Conhecimentos OU Experiência Como desenvolvedor, NAS seguintes linguagem: Python(Django) e React js.
+É um projecto feito para teste dada Pela Empresa Verzel, com Objectivos de teste os meus conhecimentos ou experiência como desenvolvedor, nas seguintes linguagem: Python(Django) e React js.
 
 ### npm start
 executar a aplicação
